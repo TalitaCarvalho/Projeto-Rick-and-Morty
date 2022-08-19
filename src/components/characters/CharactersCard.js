@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const CharactersCard = (props) => {
   const character = props.character;
   const status = character.status === "Alive" ? "alive" : "dead";
@@ -7,7 +9,7 @@ const CharactersCard = (props) => {
       <img src={character.image} alt="" />
 
       <div className="texto-informacao">
-        <h1>{character.name}</h1>
+        <h1><NavLink to={`/personagem/${character.id}`}>{character.name}</NavLink></h1>
         <h4>
           <span className={status}>{character.status}</span> - {character.species}
         </h4>

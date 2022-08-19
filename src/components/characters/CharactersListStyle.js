@@ -16,9 +16,9 @@ export const Card = styled.section`
     border-radius: 50px;
   }
 
-  .card:hover {
+  /* .card:hover {
     background-color: lightgrey;
-  }
+  } */
 
   img {
     border-radius: 50px;
@@ -31,6 +31,10 @@ export const Card = styled.section`
   p {
     padding-right: 20px;
     width: 250px;
+  }
+
+  .texto-informacao h1:hover {
+    background-color: lightgreen;
   }
 
   .alive {
