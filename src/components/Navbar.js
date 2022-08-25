@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Navegation } from "./styles";
 import React from "react";
-import Logo from "../assets/fundo-home.png";
+import Logo from "../assets/images/fundo-home.png";
 const Navbar = () => {
   return (
     <Navegation>
@@ -18,13 +18,13 @@ const Navbar = () => {
             <NavLink to="/">Início</NavLink>
           </li>
           <li>
-            <NavLink to="/curiosidades">Curiosidades</NavLink>
+            <NavLink to="/personagem">Personagem</NavLink>
           </li>
           <li>
             <NavLink to="/dimensao">Dimensão</NavLink>
           </li>
           <li>
-            <NavLink to="/personagem">Personagem</NavLink>
+            <NavLink to="/curiosidades">Curiosidades</NavLink>
           </li>
         </ul>
       </nav>

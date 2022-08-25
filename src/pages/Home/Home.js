@@ -3,11 +3,11 @@ import { Home as HomeStyle } from "./styles"
 
 const Home = () => {
   return (
-    <HomeStyle>
-      <main>
+    <HomeStyle className="text-center flex items-center justify-center">
+      <div>
         <div>Bem-vindo ao</div>
         <div className="sub-titulo">Universo Rick and Morty</div>
-      </main>
+      </div>
     </HomeStyle>
   );
 };

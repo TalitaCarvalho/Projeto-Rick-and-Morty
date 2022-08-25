@@ -1,18 +1,16 @@
 import styled from "styled-components";
-import Portal from "../../assets/portal.gif";
+import Portal from "../../assets/images/portal.gif";
 
-export const Home = styled.main`
+export const Home = styled.div `
   div {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 65px;
-    padding-top: 200px;
     color: black;
     font-weight: bolder;
   }
 
   .sub-titulo {
     font-family: "Rick and Morty Fonts";
-    padding-top: 30px;
     font-size: 90px;
     background-image: linear-gradient(
       to bottom,
