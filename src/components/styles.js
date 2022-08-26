@@ -34,18 +34,7 @@ export const Navegation = styled.ul`
     align-items: center;
   }
 
-  li a:hover {
-    /* border-radius: 5px;
-    background-color: #2eb331; */
-    padding: 0 6px;
-    border-radius: 5px;
-background: linear-gradient(145deg, #f7f2f4, #f7f2f4);
-box-shadow:  5px 5px 10px #8deba9,
-             -5px -5px 10px #3ef38c;
-  }
-
   li {
-    padding-right: 20px;
     list-style: none;
     display: inline-block;
   }

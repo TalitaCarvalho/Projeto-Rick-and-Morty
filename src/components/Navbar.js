@@ -13,18 +13,18 @@ const Navbar = () => {
             alt="Rick-and-Morty-em-preto-e-branco-pequeno"
           />
         </a>
-        <ul>
+        <ul className="flex flex-row gap-x-4">
           <li>
-            <NavLink to="/">Início</NavLink>
+            <NavLink to="/" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Início</NavLink>
           </li>
           <li>
-            <NavLink to="/personagem">Personagem</NavLink>
+            <NavLink to="/personagem" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Personagem</NavLink>
           </li>
           <li>
-            <NavLink to="/dimensao">Dimensão</NavLink>
+            <NavLink to="/dimensao" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Dimensão</NavLink>
           </li>
           <li>
-            <NavLink to="/curiosidades">Curiosidades</NavLink>
+            <NavLink to="/curiosidades" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Curiosidades</NavLink>
           </li>
         </ul>
       </nav>
