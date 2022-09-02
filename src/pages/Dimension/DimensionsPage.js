@@ -1,13 +1,32 @@
+import { useEffect, useState } from "react";
 import DimensionsList from "../../components/Dimensions/DimensionsList";
-import Data from "../../utils/data";
 import { Fundo } from "../../components/Dimensions/DimensionsStyles";
+import service from "../../utils/service"
 
 const DimensionsPage = () => {
-  const data = Data.dimensions;
+  const [locations, setLocations] = useState([])
+
+  async function fetchLocations() {
+    const result = await service(`
+    locations {
+      results {
+        id,
+        name,
+        type
+      }
+    }
+    `);
+    setLocations(result.data.locations.results)
+  }
+  
+  useEffect(() => {
+    fetchLocations()
+  }, [])
+
   return (
     <section>
       <Fundo>
-        <DimensionsList dimensions={data.results} />
+        <DimensionsList dimensions={locations} />
       </Fundo>
     </section>
   );

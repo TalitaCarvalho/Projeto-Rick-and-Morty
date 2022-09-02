@@ -1,16 +1,43 @@
-import Data from "../../utils/data";
+// import Data from "../../utils/data";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import service from "../../utils/service"
 
 const DimensionDatailsPage = () => {
   const { id } = useParams();
-  const location = Data.location;
+  const [dimensionDetails, setDimensionDetails] = useState({});
+  
+async function fetchDimensionDetails() {
+  
+  const result = await service(`
+  location(id:${id}) {
+    id,
+    name,
+    type,
+    dimension,
+    residents {
+      id,
+      image,
+      name
+    }
+  }
+  `);
+  setDimensionDetails(result.data.location)
+}
+
+
+useEffect(() => {
+  fetchDimensionDetails();
+}, [])
+
+  // const location = Data.location;
 
   return (
     <div>
       <div className="text-center mt-7 ">
-        <h1 className="text-2xl text-5xl">{location.name}</h1>
-        <h4 className="text-3xl">{location.type}</h4>
-        <h4>{location.dimension}</h4>
+        <h1 className="text-2xl text-5xl">{dimensionDetails.name}</h1>
+        <h4 className="text-3xl">{dimensionDetails.type}</h4>
+        <h4>{dimensionDetails.dimension}</h4>
       </div>
 
       <div>
@@ -18,7 +45,7 @@ const DimensionDatailsPage = () => {
           Residentes dessa dimensão:
         </p>
         <div className="flex flex-row flex-wrap justify-center pt-2">
-          {location.residents.map((resident) => {
+          {dimensionDetails.residents?.map((resident) => {
             return (
               <div className="m-6" key={resident.id}>
                 <img

@@ -5,7 +5,7 @@ const DimensionsCard = (props) => {
   const dimension = props.dimension;
 
   return (
-    <div className="bg-slate-100 rounded-lg p-5 font-mono flex flex-row items-center">
+    <div className="bg-slate-100 rounded-lg p-5 font-mono flex flex-row items-center w-full max-w-xs">
       <List>
         <img className="portal-card" src={portal} alt="" />
       </List>

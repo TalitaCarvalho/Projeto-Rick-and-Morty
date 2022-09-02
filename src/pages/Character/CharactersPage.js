@@ -1,11 +1,39 @@
+import { useEffect, useState } from "react";
 import CharactersList from "../../components/Characters/CharactersList";
-import Data from "../../utils/data"
+import Spinner from "../../components/Spinner";
+import service from "../../utils/service";
+
 const CharactersPage = () => {
-  const data = Data.characters
+  const [characters, setCharacters] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  async function fetchCharacters() {
+    const result = await service(`
+    characters {
+      info {
+        pages,
+        next,
+        prev
+      }
+      results {
+        id,
+        name,
+        image
+      }
+    }
+    `);
+    if (result) {
+      console.log(result);
+      setCharacters(result.data.characters.results);
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchCharacters();
+  }, []);
   return (
-    <div>
-      <CharactersList results={data.results}/>
-    </div>
+    <div>{loading ? <Spinner /> : <CharactersList results={characters} />}</div>
   );
 };
 
