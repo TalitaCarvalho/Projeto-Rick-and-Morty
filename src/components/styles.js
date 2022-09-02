@@ -1,6 +1,4 @@
 import styled from "styled-components";
-
-// aqui foi só um teste, o código se encontra no App.js da linha 18 a 21 
 export const Title = styled.h1`
   color: aquamarine;
   span {
@@ -11,7 +9,6 @@ export const Title = styled.h1`
   }
 `;
 
-// Aqui é a stilização do NAVBAR
 export const Navegation = styled.ul`
   margin: 0;
   background-color: #48d49c;
@@ -43,21 +40,4 @@ export const Navegation = styled.ul`
     width: 50px;
     background-image: url("http://localhost:3000/");
   }
-`;
-
-// AQUI TRATA DO FOOTER
-export const Rodape = styled.footer`
-  width: 100%;
-
-  bottom: 0;
-  background-image: radial-gradient(
-    circle at 100.34% 68.32%,
-    #f748e1 0,
-    #e442e7 16.67%,
-    #ce3eed 33.33%,
-    #b53cf2 50%,
-    #973cf7 66.67%,
-    #703efc 83.33%,
-    #3142ff 100%
-  );
 `;
