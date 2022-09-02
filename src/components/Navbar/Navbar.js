@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Navegation } from "./styles";
 import React from "react";
-import Logo from "../../assets/images/fundo-home.png";
 const Navbar = () => {
   return (
     <Navegation>
@@ -9,7 +8,7 @@ const Navbar = () => {
         <a href="http://localhost:3000/" title="imagem que leva pra home">
           <img
             className="logo-navbar"
-            src={Logo}
+            src="/assets/images/fundo-home.png"
             alt="Rick-and-Morty-em-preto-e-branco-pequeno"
           />
         </a>
