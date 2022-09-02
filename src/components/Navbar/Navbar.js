@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Navegation } from "./styles";
 import React from "react";
-import Logo from "../assets/images/fundo-home.png";
+import Logo from "../../assets/images/fundo-home.png";
 const Navbar = () => {
   return (
     <Navegation>
