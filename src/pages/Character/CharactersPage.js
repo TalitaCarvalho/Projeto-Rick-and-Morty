@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CharactersList from "../../components/Characters/CharactersList";
-import Spinner from "../../components/Spinner";
+import Spinner from "../../components/App/Spinner";
 import service from "../../utils/service";
 
 const CharactersPage = () => {
@@ -23,7 +23,6 @@ const CharactersPage = () => {
     }
     `);
     if (result) {
-      console.log(result);
       setCharacters(result.data.characters.results);
       setLoading(false);
     }

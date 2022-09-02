@@ -6,7 +6,7 @@ const DimensionsCard = (props) => {
   return (
     <div className="bg-slate-100 rounded-lg p-5 font-mono flex flex-row items-center w-full max-w-xs">
       <List>
-        <img className="portal-card" src="/assets/images/portal.png" alt="" />
+        <img className="portal-card" src="/assets/images/dimension/portal.png" alt="" />
       </List>
       <div>
         <h1>

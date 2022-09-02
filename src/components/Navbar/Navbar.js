@@ -8,7 +8,7 @@ const Navbar = () => {
         <a href="http://localhost:3000/" title="imagem que leva pra home">
           <img
             className="logo-navbar"
-            src="/assets/images/fundo-home.png"
+            src="/assets/images/home/fundo-home.png"
             alt="Rick-and-Morty-em-preto-e-branco-pequeno"
           />
         </a>
@@ -17,10 +17,10 @@ const Navbar = () => {
             <NavLink to="/" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Início</NavLink>
           </li>
           <li>
-            <NavLink to="/personagem" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Personagem</NavLink>
+            <NavLink to="/personagem" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Personagens</NavLink>
           </li>
           <li>
-            <NavLink to="/dimensao" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Dimensão</NavLink>
+            <NavLink to="/dimensao" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Dimensões</NavLink>
           </li>
           <li>
             <NavLink to="/curiosidades" className={({isActive}) => isActive ? "route-active" : "hover:text-[#4682b4]"}>Curiosidades</NavLink>

@@ -1,10 +1,5 @@
 import { Curiosidades } from "./CuriosityStyle";
-import Dan from "../..";
-import Justin from "../..";
-import Curiosidade1 from "../..";
-import Curiosidade2 from "../..";
-import Curiosidade3 from "../..";
-import Curiosidade4 from "../..";
+
 const Curiosity = () => {
   return (
     <div>
@@ -24,7 +19,7 @@ const Curiosity = () => {
           <div>
             <img
               className="flex flex-row flex-wrap justify-center mx-8 rounded-lg"
-              src="/assets/images/images-curiosity/Dan.jpeg"
+              src="/assets/images/curiosity/Dan.jpeg"
               alt="criador do Rick and Morty"
             />
             <h1 className="flex justify-center pt-3 text-xl">Justin Roiland</h1>
@@ -33,7 +28,7 @@ const Curiosity = () => {
           <div>
             <img
               className="flex flex-row flex-wrap justify-center mx-8 rounded-lg"
-              src="/assets/images/images-curiosity/Justin.jpeg"
+              src="/assets/images/curiosity/Justin.jpeg"
               alt="criador do Rick and Morty"
             />
             <h1 className="flex justify-center pt-3 text-xl">Dan Harmon</h1>
@@ -49,7 +44,7 @@ const Curiosity = () => {
               </strong>
             </h1>
             <div className="flex flex-row mx-8 mt-8">
-              <img className="imagem-curiosidade" src="/assets/images/images-curiosity/Curiosidade1.webp" alt="" />
+              <img className="imagem-curiosidade" src="/assets/images/curiosity/Curiosidade1.webp" alt="" />
               <div className="p-10">
                 <p>
                   Uma paródia animada ainda mais doentia, dessa vez de De Volta
@@ -75,7 +70,7 @@ const Curiosity = () => {
               <strong>2. Os Simpsons</strong>
             </h1>
             <div className="flex flex-row mx-8 mt-8">
-              <img className="imagem-curiosidade" src="/assets/images/images-curiosity/Curiosidade2.webp" alt="" />
+              <img className="imagem-curiosidade" src="/assets/images/curiosity/Curiosidade2.webp" alt="" />
               <div className="p-10">
                 <p>
                   E por falar em Os Simpsons, o desenho foi pioneiro, abrindo
@@ -103,7 +98,7 @@ const Curiosity = () => {
               <strong>3. O episódio piloto foi escrito em 6 horas</strong>
             </h1>
             <div className="flex flex-row mx-8 mt-8">
-              <img className="imagem-curiosidade" src="/assets/images/images-curiosity/Curiosidade3.webp" alt="" />
+              <img className="imagem-curiosidade" src="/assets/images/curiosity/Curiosidade3.webp" alt="" />
               <div className="p-10">
                 <p>
                   Os cronogramas seriam apertados assim que a produção do
@@ -125,7 +120,7 @@ const Curiosity = () => {
               <strong>4. O curioso caso do Molho Szechuan</strong>
             </h1>
             <div className="flex flex-row mx-8 mt-8">
-              <img className="imagem-curiosidade" src="/assets/images/images-curiosity/Curiosidade4.webp" alt="" />
+              <img className="imagem-curiosidade" src="/assets/images/curiosity/Curiosidade4.webp" alt="" />
               <div className="p-10">
                 <p>
                   Você sabe que um programa é culturalmente influente e

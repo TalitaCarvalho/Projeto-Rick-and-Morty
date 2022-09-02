@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Spinner from "../../components/Spinner";
+import Spinner from "../../components/App/Spinner";
 import service from "../../utils/service";
 
 const CharacterDetailsPage = () => {
