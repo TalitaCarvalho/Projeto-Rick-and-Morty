@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Portal from "../../assets/images/portal.gif";
+import Portal from "../..";
 
 export const Home = styled.div `
   div {
@@ -30,7 +30,7 @@ export const Home = styled.div `
 
   height: calc(100vh - 67.61px);
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url(${Portal});
+    url("/assets/images/home/portal.gif");
   background-repeat: no-repeat;
   background-position: center;
 `;
