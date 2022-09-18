@@ -9,6 +9,7 @@ const CharactersPage = () => {
   const [characters, setCharacters] = useState([]);
   const [info, setInfo] = useState({});
   const [loading, setLoading] = useState(true);
+  const [characterName, setCharacterName] = useState(null);
 
   useEffect(() => {
     fetchCharacters();
@@ -60,9 +61,10 @@ const CharactersPage = () => {
     }
   }
 
-  async function fetchSearchCharacter(searchCharacter) {
+  async function fetchSearchCharacter(name, pageNumber) {
+    const pageNumberCondition = pageNumber ? `page: ${pageNumber},` : "";
     const result = await service(`
-    characters (filter: {name: "${searchCharacter}"}) {
+    characters (${pageNumberCondition} filter: {name: "${name}"}) {
       info {
         count,
         pages,
@@ -82,16 +84,25 @@ const CharactersPage = () => {
     }
   }
 
-  function handleSearchInput(searchValueId) {
-    fetchSearchCharacter(searchValueId);
+  function handleSearchInput(name) {
+    setCharacterName(name);
+    fetchSearchCharacter(name);
   }
 
   function handlePageNavigation(action) {
     if (action === "prev") {
-      fetchCharactersByPage(info.prev);
-      return;
+      if (characterName) {
+        fetchSearchCharacter(characterName, info.prev);
+      } else {
+        fetchCharactersByPage(info.prev);
+      }
+    } else {
+      if (characterName) {
+        fetchSearchCharacter(characterName, info.next);
+      } else {
+        fetchCharactersByPage(info.next);
+      }
     }
-    fetchCharactersByPage(info.next);
   }
 
   const pageNumber = () => {

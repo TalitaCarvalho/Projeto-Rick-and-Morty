@@ -8,6 +8,7 @@ import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
 const DimensionsPage = () => {
   const [locations, setLocations] = useState([]);
   const [info, setInfo] = useState({});
+  const [dimensionName, setDimensionName] = useState(null);
 
   useEffect(() => {
     fetchLocations();
@@ -56,9 +57,12 @@ const DimensionsPage = () => {
     }
   }
 
-  async function fetchSearchLocation(searchLocation) {
+  async function fetchSearchLocation(nameLocation, searchLocation) {
+    const pageNumberCondition = searchLocation
+      ? `page: ${searchLocation},`
+      : "";
     const result = await service(`
-    locations (filter: {name: "${searchLocation}"}) {
+    locations (${pageNumberCondition} filter: {name: "${nameLocation}"}) {
       info {
         count,
         pages,
@@ -77,16 +81,25 @@ const DimensionsPage = () => {
     }
   }
 
-  function handleSearchInput(searchValueId) {
-    fetchSearchLocation(searchValueId);
+  function handleSearchInput(nameLocation) {
+    setDimensionName(nameLocation)
+    fetchSearchLocation(nameLocation);
   }
 
   function handlePageNavigation(action) {
     if (action === "prev") {
-      fetchLocationsByPage(info.prev);
-      return;
+      if (dimensionName) {
+        fetchSearchLocation(dimensionName, info.prev);
+      } else {
+        fetchLocationsByPage(info.prev);
+      }
+    } else {
+      if (dimensionName) {
+        fetchSearchLocation(dimensionName, info.next);
+      } else {
+        fetchLocationsByPage(info.next);
+      }
     }
-    fetchLocationsByPage(info.next);
   }
 
   const pageNumber = () => {

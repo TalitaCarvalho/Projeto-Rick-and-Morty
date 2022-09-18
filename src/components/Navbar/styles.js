@@ -9,10 +9,9 @@ export const Title = styled.h1`
   }
 `;
 
-export const Navegation = styled.ul`
+export const Navegation = styled.div`
   margin: 0;
   background-color: #48d49c;
-  padding: 5px 0;
   background-image: radial-gradient(
     circle at 89.45% 35.64%,
     #ffffff 0,
@@ -24,20 +23,9 @@ export const Navegation = styled.ul`
 
   nav {
     margin: 0 auto;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  li {
-    list-style: none;
-    display: inline-block;
   }
 
   .logo-navbar {
     width: 50px;
-    background-image: url("http://localhost:3000/");
   }
 `;
